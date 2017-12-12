@@ -12,6 +12,7 @@
 
 #include "UserEntry.hpp"
 #include "Parser.hpp"
+#include "Operand.hpp"
 
 int		main(int argc, char **argv)
 {
@@ -19,6 +20,8 @@ int		main(int argc, char **argv)
 
 	try
 	{
+		Operand<bool> *test = new Operand<bool>(eOperandType::Int32);
+		Operand<int> *test1 = new Operand<int>(eOperandType::Int32);
 		if (argc == 1)
 			entry.readEntry();
 		else if (argc == 2)
@@ -27,6 +30,7 @@ int		main(int argc, char **argv)
 			throw UserEntry::WrongArgumentNumber();
 		}
 		Parser::ParseEntry(entry.getContent());
+
 	}
 	catch (std::exception &e)
 	{

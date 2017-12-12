@@ -39,5 +39,27 @@ IOperand const *OperandFactory::createDouble(std::string const &value) const
 
 IOperand const *OperandFactory::createOperand(eOperandType type, std::string const& value) const
 {
+	switch (type)
+	{
+		case eOperandType::Int8:
+			return (this->createInt8(value));
+		break;
+
+		case eOperandType::Int16:
+			return (this->createInt16(value));
+		break;
+
+		case eOperandType::Int32:
+			return (this->createInt32(value));
+		break;
+
+		case eOperandType::Float:
+			return (this->createFloat(value));
+		break;
+
+		case eOperandType::Double:
+			return (this->createDouble(value));
+		break;
+	}
 	return (NULL);
 }

@@ -17,7 +17,7 @@ NAMEBASE    =   $(shell basename $(NAME))
 LENGTHNAME	=	`printf "%s" $(NAMEBASE) | wc -c`
 MAX_COLS	=	$$(echo "$$(tput cols)-24-$(LENGTHNAME)"|bc)
 
-CC			=	g++
+CC			=	g++ -std=c++11
 #FLAGS		=	-Wall -Wextra -Werror
 FLAGS_O		=
 
@@ -27,11 +27,13 @@ OBJDIR_ABSTRACT_VM		=	objs/
 INCDIR				=	includes/
 
 SRCBASE_ABSTRACT_VM	=	\
-					main.cpp				\
-					OperandFactory.cpp		\
-					UserEntry.cpp			\
-					Parser.cpp				\
-					Utils.cpp				\
+					main.cpp								\
+					OperandFactory.cpp						\
+					UserEntry.cpp							\
+					Parser.cpp								\
+					Utils.cpp								\
+					Operand.cpp								\
+					templates/OperandTemplate.cpp			\
 
 INCS			=	$(addprefix $(INCDIR), $(INCBASE))
 
