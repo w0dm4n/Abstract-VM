@@ -33,6 +33,7 @@ int		main(int argc, char **argv)
 	}
 	catch (std::exception &e)
 	{
+		// save in logger
 		std::cout << "An error occured: " << e.what() << std::endl;
 	}
 	return (0);

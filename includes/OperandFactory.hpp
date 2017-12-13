@@ -14,7 +14,7 @@
 #define OPERAND_FACTORY
 
 #include "All.hpp"
-#include "interfaces/IOperand.hpp"
+#include "Operand.hpp"
 
 class OperandFactory
 {

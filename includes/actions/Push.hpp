@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Handler.hpp                                        :+:      :+:    :+:   */
+/*   Push.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frmarinh <frmarinh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/13 15:27:10 by frmarinh          #+#    #+#             */
-/*   Updated: 2017/12/13 15:27:13 by frmarinh         ###   ########.fr       */
+/*   Created: 2017/12/13 16:07:16 by frmarinh          #+#    #+#             */
+/*   Updated: 2017/12/13 16:07:26 by frmarinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HANDLER_HPP
-# define HANDLER_HPP
+#ifndef PUSH_HPP
+# define PUSH_HPP
 
 #include "All.hpp"
-#include "actions/Action.hpp"
-#include "actions/Push.hpp"
+#include "Action.hpp"
+#include "Utils.hpp"
 
-class Handler
+class Push
 {
 	public:
-
-		Handler();
-		Handler( Handler const & src );
-		virtual ~Handler();
-
-		void initActions();
-		void Process(std::vector<std::string> line);
-		Handler &							operator=( Handler const & rhs );
-		friend std::ostream &				operator<<(std::ostream & o, Handler const & i);
-	private:
-		std::vector<Action*>	actions;
+		static void Handler(std::vector<std::string> line);
+		static void Int8(std::vector<std::string> line);
+		static void Int16(std::vector<std::string> line);
+		static void Int32(std::vector<std::string> line);
+		static void Double(std::vector<std::string> line);
+		static void Float(std::vector<std::string> line);
 };
 
 #endif

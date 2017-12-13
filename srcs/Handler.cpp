@@ -38,20 +38,14 @@ std::ostream &				operator<<(std::ostream & o, Handler const & i)
 	return (o);
 }
 
-void Handler::Salope(std::vector<std::string> line)
-{
-	std::cout << "Bonjour ! je veux push une valeur" << std::endl;
-}
-
 void Handler::initActions()
 {
-	this->actions.push_back(new Action("push", &Handler::Salope));
+	this->actions.push_back(new Action("push", &Push::Handler));
 }
 
 void Handler::Process(std::vector<std::string> line)
 {
 	std::string action = line[0];
-	std::cout << action << std::endl;
 	for (int i = 0; i < this->actions.size(); i++)
 	{
 		if (action == this->actions[i]->name) {

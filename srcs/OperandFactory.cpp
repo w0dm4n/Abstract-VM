@@ -14,7 +14,8 @@
 
 IOperand const *OperandFactory::createInt8(std::string const &value) const
 {
-	return (NULL);
+	Operand<int8_t> *operand = new Operand<int8_t>(eOperandType::Int8);
+	return (operand);
 }
 
 IOperand const *OperandFactory::createInt16(std::string const &value) const

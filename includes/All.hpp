@@ -15,6 +15,8 @@
 #define USER_READ			1024
 #define EOF_AVM				";;"
 #define ESCAPE_CHAR			' '
+#define START_NUMBER		'('
+#define END_NUMBER			')'
 
 # include <unistd.h>
 # include <string>
