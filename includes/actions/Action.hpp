@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   All.hpp                                            :+:      :+:    :+:   */
+/*   Action.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frmarinh <frmarinh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/12 13:20:25 by frmarinh          #+#    #+#             */
-/*   Updated: 2017/12/12 13:20:58 by frmarinh         ###   ########.fr       */
+/*   Created: 2017/12/13 15:17:39 by frmarinh          #+#    #+#             */
+/*   Updated: 2017/12/13 15:17:42 by frmarinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ALL_HPP
-#define ALL_HPP
-#define USER_READ			1024
-#define EOF_AVM				";;"
-#define ESCAPE_CHAR			' '
+#ifndef ACTION_HPP
+# define ACTION_HPP
 
-# include <unistd.h>
-# include <string>
-# include <iostream>
-# include <fstream>
-# include <vector>
-# include <exception>
+#include "All.hpp"
+
+class Action
+{
+	public:
+
+		Action();
+		Action(std::string name, void(*foo)(std::vector<std::string>));
+		Action( Action const & src );
+		virtual ~Action();
+
+		Action &							operator=( Action const & rhs );
+		friend std::ostream &				operator<<(std::ostream & o, Action const & i);
+		std::string name;
+		void(*func)(std::vector<std::string>);
+};
+
 #endif

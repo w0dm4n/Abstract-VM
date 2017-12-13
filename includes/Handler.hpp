@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Parser.hpp                                         :+:      :+:    :+:   */
+/*   Handler.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frmarinh <frmarinh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/12 15:13:15 by frmarinh          #+#    #+#             */
-/*   Updated: 2017/12/12 15:13:16 by frmarinh         ###   ########.fr       */
+/*   Created: 2017/12/13 15:27:10 by frmarinh          #+#    #+#             */
+/*   Updated: 2017/12/13 15:27:13 by frmarinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSER_HPP
-# define PARSER_HPP
+#ifndef HANDLER_HPP
+# define HANDLER_HPP
 
 #include "All.hpp"
-#include "Utils.hpp"
-#include "Handler.hpp"
+#include "actions/Action.hpp"
 
-class Parser
+class Handler
 {
 	public:
 
-		Parser();
-		Parser( Parser const & src );
-		virtual ~Parser();
-		static void ParseEntry(std::vector<std::string>);
+		Handler();
+		Handler( Handler const & src );
+		virtual ~Handler();
 
-		Parser &							operator=( Parser const & rhs );
-		friend std::ostream &				operator<<(std::ostream & o, Parser const & i);
+		void initActions();
+		void Process(std::vector<std::string> line);
+		static void Salope(std::vector<std::string> line);
+		Handler &							operator=( Handler const & rhs );
+		friend std::ostream &				operator<<(std::ostream & o, Handler const & i);
+	private:
+		std::vector<Action*>	actions;
 };
 
 #endif

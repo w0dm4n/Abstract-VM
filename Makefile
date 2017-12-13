@@ -34,6 +34,8 @@ SRCBASE_ABSTRACT_VM	=	\
 					Utils.cpp								\
 					Operand.cpp								\
 					templates/OperandTemplate.cpp			\
+					Handler.cpp 							\
+					actions/Action.cpp	 					\
 
 INCS			=	$(addprefix $(INCDIR), $(INCBASE))
 

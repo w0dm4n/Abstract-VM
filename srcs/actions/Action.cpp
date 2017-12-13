@@ -1,51 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Parser.cpp                                         :+:      :+:    :+:   */
+/*   Action.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frmarinh <frmarinh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/12 15:12:55 by frmarinh          #+#    #+#             */
-/*   Updated: 2017/12/12 15:12:57 by frmarinh         ###   ########.fr       */
+/*   Created: 2017/12/13 15:17:49 by frmarinh          #+#    #+#             */
+/*   Updated: 2017/12/13 15:17:51 by frmarinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Parser.hpp"
+#include "actions/Action.hpp"
 
-Parser::Parser ()
+Action::Action ()
 {
 	return ;
 }
 
-Parser::Parser ( Parser const & src )
+Action::Action(std::string name, void(*foo)(std::vector<std::string>))
+{
+	this->name = name;
+	this->func = foo;
+}
+
+Action::Action ( Action const & src )
 {
 	*this = src;
 }
 
-Parser &				Parser::operator=( Parser const & rhs )
+Action &				Action::operator=( Action const & rhs )
 {
 	return (*this);
 }
 
-Parser::~Parser ()
+Action::~Action ()
 {
 	return ;
 }
 
-std::ostream &				operator<<(std::ostream & o, Parser const & i)
+std::ostream &				operator<<(std::ostream & o, Action const & i)
 {
 	return (o);
-}
-
-void Parser::ParseEntry(std::vector<std::string> lines)
-{
-	std::vector<std::string>		datas;
-	Handler							handler;
-	for (int i = 0; i < lines.size(); i++)
-	{
-		datas = Utils::split(lines[i], ESCAPE_CHAR);
-		if (datas.size() > 0) {
-			handler.Process(datas);
-		}
-	}
 }
