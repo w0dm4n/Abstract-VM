@@ -17,15 +17,16 @@
 #include "Action.hpp"
 #include "Utils.hpp"
 
+class Handler;
 class Push
 {
 	public:
-		static void Handler(std::vector<std::string> line);
-		static void Int8(std::vector<std::string> line);
-		static void Int16(std::vector<std::string> line);
-		static void Int32(std::vector<std::string> line);
-		static void Double(std::vector<std::string> line);
-		static void Float(std::vector<std::string> line);
+		static void Handle(std::vector<std::string> line, Handler *handler);
+		static void Int8(std::vector<std::string> line, Handler *handler);
+		static void Int16(std::vector<std::string> line, Handler *handler);
+		static void Int32(std::vector<std::string> line, Handler *handler);
+		static void Double(std::vector<std::string> line, Handler *handler);
+		static void Float(std::vector<std::string> line, Handler *handler);
 };
 
 #endif

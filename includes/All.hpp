@@ -14,14 +14,17 @@
 #define ALL_HPP
 #define USER_READ			1024
 #define EOF_AVM				";;"
-#define ESCAPE_CHAR			' '
-#define START_NUMBER		'('
-#define END_NUMBER			')'
+#define ESCAPE_CHAR		' '
+#define START_NUMBER	'('
+#define END_NUMBER		')'
 
 # include <unistd.h>
 # include <string>
+# include <string.h>
 # include <iostream>
 # include <fstream>
 # include <vector>
 # include <exception>
+# include <stack>
+# include <memory>
 #endif

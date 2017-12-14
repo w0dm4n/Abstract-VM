@@ -30,7 +30,6 @@ Operand<T> &				Operand<T>::operator=( Operand const & rhs )
 template <class T>
 std::ostream &				operator<<(std::ostream & o, Operand<T> const & i)
 {
-
 	return (o);
 }
 
@@ -60,6 +59,12 @@ std::string const & Operand<T>::toString( void ) const
 }
 
 template <class T>
+T Operand<T>::getValue() const
+{
+	return this->value;
+}
+
+template <class T>
 Operand<T>::~Operand ()
 {
 	return ;
@@ -69,6 +74,7 @@ template <class T>
 Operand<T>::Operand (eOperandType type) : type(type)
 {
 	std::cout << "Default Type" << std::endl;
+	this->value = 3;
 	return ;
 }
 

@@ -40,7 +40,7 @@ std::ostream &				operator<<(std::ostream & o, Handler const & i)
 
 void Handler::initActions()
 {
-	this->actions.push_back(new Action("push", &Push::Handler));
+	this->actions.push_back(new Action("push", &Push::Handle));
 }
 
 void Handler::Process(std::vector<std::string> line)
@@ -49,7 +49,7 @@ void Handler::Process(std::vector<std::string> line)
 	for (int i = 0; i < this->actions.size(); i++)
 	{
 		if (action == this->actions[i]->name) {
-			this->actions[i]->func(line);
+			this->actions[i]->func(line, this);
 		}
 	}
 }

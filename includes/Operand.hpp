@@ -26,7 +26,8 @@ class Operand : public IOperand
 		virtual ~Operand();
 
 		eOperandType						getType( void ) const;
-		int									getPrecision(void) const;
+		int											getPrecision(void) const;
+		T												getValue() const;
 		IOperand const * operator+( IOperand const & rhs ) const;
 		IOperand const * operator-( IOperand const & rhs ) const;
 		IOperand const * operator*( IOperand const & rhs ) const;
@@ -34,8 +35,8 @@ class Operand : public IOperand
 		IOperand const * operator%( IOperand const & rhs ) const;
 		std::string const & toString( void ) const;
 
-		Operand &							operator=( Operand const & rhs );
-		friend std::ostream &				operator<<(std::ostream & o, Operand const & i);
+		Operand&								operator=( Operand const & rhs );
+		friend std::ostream&		operator<<(std::ostream & o, Operand<T> const & i);
 	private:
 		eOperandType	type;
 		T				value;

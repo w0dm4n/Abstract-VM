@@ -15,19 +15,20 @@
 
 #include "All.hpp"
 
+class Handler;
 class Action
 {
 	public:
 
 		Action();
-		Action(std::string name, void(*foo)(std::vector<std::string>));
+		Action(std::string name, void(*foo)(std::vector<std::string>, Handler*));
 		Action( Action const & src );
 		virtual ~Action();
 
 		Action &							operator=( Action const & rhs );
 		friend std::ostream &				operator<<(std::ostream & o, Action const & i);
 		std::string name;
-		void(*func)(std::vector<std::string>);
+		void(*func)(std::vector<std::string>, Handler *handler);
 };
 
 #endif

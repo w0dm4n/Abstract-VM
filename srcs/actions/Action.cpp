@@ -11,13 +11,14 @@
 /* ************************************************************************** */
 
 #include "actions/Action.hpp"
+#include "Handler.hpp"
 
 Action::Action ()
 {
 	return ;
 }
 
-Action::Action(std::string name, void(*foo)(std::vector<std::string>))
+Action::Action(std::string name, void(*foo)(std::vector<std::string>, Handler *handler))
 {
 	this->name = name;
 	this->func = foo;

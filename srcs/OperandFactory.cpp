@@ -14,28 +14,32 @@
 
 IOperand const *OperandFactory::createInt8(std::string const &value) const
 {
-	Operand<int8_t> *operand = new Operand<int8_t>(eOperandType::Int8);
+	Operand<int8_t> *operand = new Operand<int8_t>(eOperandType::Int8);	
 	return (operand);
 }
 
 IOperand const *OperandFactory::createInt16(std::string const &value) const
 {
-	return (NULL);
+	Operand<int16_t> *operand = new Operand<int16_t>(eOperandType::Int16);
+	return (operand);
 }
 
 IOperand const *OperandFactory::createInt32(std::string const &value) const
 {
-	return (NULL);
+	Operand<int32_t> *operand = new Operand<int32_t>(eOperandType::Int32);
+	return (operand);
 }
 
 IOperand const *OperandFactory::createFloat(std::string const &value) const
 {
-	return (NULL);
+	Operand<float> *operand = new Operand<float>(eOperandType::Float);
+	return (operand);
 }
 
 IOperand const *OperandFactory::createDouble(std::string const &value) const
 {
-	return (NULL);
+	Operand<double> *operand = new Operand<double>(eOperandType::Double);
+	return (operand);
 }
 
 IOperand const *OperandFactory::createOperand(eOperandType type, std::string const& value) const

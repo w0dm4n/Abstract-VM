@@ -14,6 +14,7 @@
 # define HANDLER_HPP
 
 #include "All.hpp"
+#include "Operand.hpp"
 #include "actions/Action.hpp"
 #include "actions/Push.hpp"
 
@@ -29,6 +30,7 @@ class Handler
 		void Process(std::vector<std::string> line);
 		Handler &							operator=( Handler const & rhs );
 		friend std::ostream &				operator<<(std::ostream & o, Handler const & i);
+		std::stack <std::shared_ptr<const IOperand>> stack;
 	private:
 		std::vector<Action*>	actions;
 };
