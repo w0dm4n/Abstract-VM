@@ -12,12 +12,16 @@
 
 #include "actions/Dump.hpp"
 #include "Handler.hpp"
+#include "actions/Push.hpp"
 
 std::ostream & operator<<(std::ostream & os, std::stack <std::shared_ptr<const IOperand>> stack)
 {
-    while (!stack.empty())
+    Handler handler_cpy;
+    handler_cpy.stack.swap(stack);
+    Push::reverse_stack(&handler_cpy);
+    while (!handler_cpy.stack.empty())
     {
-		IOperand const *top = stack.top().get();
+		IOperand const *top = handler_cpy.stack.top().get();
 
 		switch (top->getType())
 		{
@@ -56,7 +60,7 @@ std::ostream & operator<<(std::ostream & os, std::stack <std::shared_ptr<const I
 				break;
 			}
 		}
-        stack.pop();
+        handler_cpy.stack.pop();
     }
     return os;
 }

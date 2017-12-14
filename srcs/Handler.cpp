@@ -43,6 +43,8 @@ void Handler::initActions()
 	this->actions.push_back(new Action("push", &Push::Handle));
 	this->actions.push_back(new Action("pop", &Pop::Handle));
 	this->actions.push_back(new Action("dump", &Dump::Handle));
+	this->actions.push_back(new Action("assert", &Assert::Handle));
+	this->actions.push_back(new Action("print", &Print::Handle));
 }
 
 void Handler::Process(std::vector<std::string> line)

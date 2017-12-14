@@ -39,7 +39,9 @@ SRCBASE_ABSTRACT_VM	=	\
 					actions/Push.cpp	 					\
 					actions/Pop.cpp 						\
 					actions/Dump.cpp 						\
-				
+					actions/Assert.cpp 						\
+					actions/Print.cpp 						\
+
 INCS			=	$(addprefix $(INCDIR), $(INCBASE))
 
 SRCS_ABSTRACT_VM			=	$(addprefix $(SRCDIR_ABSTRACT_VM), $(SRCBASE_ABSTRACT_VM))

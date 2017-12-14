@@ -19,6 +19,8 @@
 #include "actions/Push.hpp"
 #include "actions/Pop.hpp"
 #include "actions/Dump.hpp"
+#include "actions/Assert.hpp"
+#include "actions/Print.hpp"
 
 class Handler
 {
