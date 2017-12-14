@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Pop.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frmarinh <frmarinh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/12 13:16:53 by frmarinh          #+#    #+#             */
-/*   Updated: 2017/12/12 13:17:28 by frmarinh         ###   ########.fr       */
+/*   Created: 2017/12/14 16:02:35 by frmarinh          #+#    #+#             */
+/*   Updated: 2017/12/14 16:02:43 by frmarinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "UserEntry.hpp"
-#include "Parser.hpp"
-#include "Operand.hpp"
+#include "actions/Pop.hpp"
+#include "Handler.hpp"
 
-int		main(int argc, char **argv)
+void Pop::Handle(std::vector<std::string> line, Handler *handler)
 {
-	UserEntry entry;
-
-	try
+	if (!handler->stack.empty())
 	{
-		if (argc == 1)
-			entry.readEntry();
-		else if (argc == 2)
-			entry.readFile(argv[1]);
-		else {
-			throw UserEntry::WrongArgumentNumber();
-		}
-		Parser::ParseEntry(entry.getContent());
+		handler->stack.pop();
 	}
-	catch (std::exception &e)
-	{
-		std::cout << "An error occured: " << e.what() << std::endl;
+	else {
+		throw PopOnEmptyStack();
 	}
-	return (0);
 }

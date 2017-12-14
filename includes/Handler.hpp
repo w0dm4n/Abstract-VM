@@ -17,6 +17,8 @@
 #include "Operand.hpp"
 #include "actions/Action.hpp"
 #include "actions/Push.hpp"
+#include "actions/Pop.hpp"
+#include "actions/Dump.hpp"
 
 class Handler
 {
@@ -31,6 +33,12 @@ class Handler
 		Handler &							operator=( Handler const & rhs );
 		friend std::ostream &				operator<<(std::ostream & o, Handler const & i);
 		std::stack <std::shared_ptr<const IOperand>> stack;
+
+		struct UnknownInstructionGiven : public std::exception {
+   		 virtual const char* what() const throw() {
+   			 return "An unknown instruction has been given";
+   		 }
+   	 };
 	private:
 		std::vector<Action*>	actions;
 };

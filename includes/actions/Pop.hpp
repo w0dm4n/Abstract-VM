@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   All.hpp                                            :+:      :+:    :+:   */
+/*   Pop.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frmarinh <frmarinh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/12 13:20:25 by frmarinh          #+#    #+#             */
-/*   Updated: 2017/12/12 13:20:58 by frmarinh         ###   ########.fr       */
+/*   Created: 2017/12/14 16:02:49 by frmarinh          #+#    #+#             */
+/*   Updated: 2017/12/14 16:02:59 by frmarinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ALL_HPP
-#define ALL_HPP
-#define USER_READ			1024
-#define EOF_AVM				";;"
-#define ESCAPE_CHAR		' '
-#define START_NUMBER	'('
-#define END_NUMBER		')'
-#define COMMENT_CHAR	';'
+#ifndef POP_HPP
+# define POP_HPP
 
-# include <unistd.h>
-# include <string>
-# include <string.h>
-# include <iostream>
-# include <fstream>
-# include <vector>
-# include <exception>
-# include <stack>
-# include <memory>
-# include <limits.h>
+#include "All.hpp"
+
+class Handler;
+class Pop
+{
+	public:
+	 static void Handle(std::vector<std::string> line, Handler *handler);
+
+	 struct PopOnEmptyStack : public std::exception {
+		 virtual const char* what() const throw() {
+			 return "Trying to pop an empty stack";
+		 }
+	 };
+};
+
 #endif

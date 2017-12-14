@@ -43,12 +43,15 @@ void Parser::ParseEntry(std::vector<std::string> lines)
 	Handler							handler;
 	for (int i = 0; i < lines.size(); i++)
 	{
-		datas = Utils::split(lines[i], ESCAPE_CHAR);
-		if (datas.size() > 0) {
-			handler.Process(datas);
-		}
-		else {
-			// throw error
+		if (lines[i][0] != COMMENT_CHAR)
+		{
+			datas = Utils::split(lines[i], ESCAPE_CHAR);
+			if (datas.size() > 0) {
+				handler.Process(datas);
+			}
+			else {
+				throw Handler::UnknownInstructionGiven();
+			}
 		}
 	}
 }

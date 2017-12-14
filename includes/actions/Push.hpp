@@ -27,6 +27,7 @@ class Push
 		static void Int32(std::vector<std::string> line, Handler *handler);
 		static void Double(std::vector<std::string> line, Handler *handler);
 		static void Float(std::vector<std::string> line, Handler *handler);
+		static std::string clearNumber(std::string number);
 };
 
 #endif

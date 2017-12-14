@@ -71,7 +71,7 @@ Operand<T>::~Operand ()
 }
 
 template <class T>
-Operand<T>::Operand (eOperandType type) : type(type)
+Operand<T>::Operand (eOperandType type, std::string const &value) : type(type)
 {
 	std::cout << "Default Type" << std::endl;
 	this->value = 3;

@@ -37,7 +37,9 @@ SRCBASE_ABSTRACT_VM	=	\
 					Handler.cpp 							\
 					actions/Action.cpp	 					\
 					actions/Push.cpp	 					\
-
+					actions/Pop.cpp 						\
+					actions/Dump.cpp 						\
+				
 INCS			=	$(addprefix $(INCDIR), $(INCBASE))
 
 SRCS_ABSTRACT_VM			=	$(addprefix $(SRCDIR_ABSTRACT_VM), $(SRCBASE_ABSTRACT_VM))

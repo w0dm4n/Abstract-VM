@@ -6,38 +6,44 @@ void Push::Int8(std::vector<std::string> number, Handler *handler)
 {
 	OperandFactory factory;
 	IOperand const *operand = factory.createOperand(eOperandType::Int8, number[0]);
-	Operand<int8_t> const *cast = static_cast<const Operand<int8_t>*>(operand);
-
-	std::cout << "VALUE: " << cast->getValue() << std::endl;
-  handler->stack.push(std::shared_ptr<const IOperand>(cast));
-
-	IOperand const *top = handler->stack.top().get();
-	Operand<int8_t> const *test = static_cast<const Operand<int8_t>*>(top);
-	std::cout << "VALUE FROM THE STACK: " << test->getValue() << std::endl;
-	//std::cout << As.top().get()->getType() << std::endl;
-
-	//handler->stack.push(std::shared_ptr<Element>(cast));
-	//std::cout << operand->getType() << std::endl;
+  	handler->stack.push(std::shared_ptr<const IOperand>(operand));
 }
 
 void Push::Int16(std::vector<std::string> number, Handler *handler)
 {
-	std::cout << "Int16 with value: " << number[0] << std::endl;
+	OperandFactory factory;
+	IOperand const *operand = factory.createOperand(eOperandType::Int16, number[0]);
+  	handler->stack.push(std::shared_ptr<const IOperand>(operand));
 }
 
 void Push::Int32(std::vector<std::string> number, Handler *handler)
 {
-	std::cout << "Int32 with value: " << number[0] << std::endl;
+	OperandFactory factory;
+	IOperand const *operand = factory.createOperand(eOperandType::Int32, number[0]);
+  	handler->stack.push(std::shared_ptr<const IOperand>(operand));
 }
 
 void Push::Double(std::vector<std::string> number, Handler *handler)
 {
-	std::cout << "Double with value: " << number[0] << std::endl;
+	OperandFactory factory;
+	IOperand const *operand = factory.createOperand(eOperandType::Double, number[0]);
+  	handler->stack.push(std::shared_ptr<const IOperand>(operand));
 }
 
 void Push::Float(std::vector<std::string> number, Handler *handler)
 {
-	std::cout << "Float with value: " << number[0] << std::endl;
+	OperandFactory factory;
+	IOperand const *operand = factory.createOperand(eOperandType::Float, number[0]);
+  	handler->stack.push(std::shared_ptr<const IOperand>(operand));
+}
+
+std::string Push::clearNumber(std::string number)
+{
+	std::string value;
+
+	for (int i = 0; i < number.length() && number[i] != END_NUMBER; i++)
+		value += number[i];
+	return value;
 }
 
 void Push::Handle(std::vector<std::string> line, Handler *handler)
@@ -59,7 +65,7 @@ void Push::Handle(std::vector<std::string> line, Handler *handler)
 			if (split.size() == 2)
 			{
 				std::string type = split[0]; // var type
-				number.push_back(std::to_string(std::stoi(split[1])));
+				number.push_back(Push::clearNumber(split[1]));
 				for (int i = 0; i < actions.size(); i++)
 				{
 					if (actions[i]->name == type)

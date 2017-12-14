@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Utils.hpp"
+#include "interfaces/IOperand.hpp"
 
 Utils::Utils ()
 {

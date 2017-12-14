@@ -13,8 +13,31 @@
 #include "Operand.hpp"
 
 template <>
-Operand<int>::Operand (eOperandType type) : type(type)
+Operand<int32_t>::Operand (eOperandType type, std::string const& value) : type(type)
 {
-	std::cout << "Bonjour" << std::endl;
-	return ;
+	this->value = stoi(value);
+}
+
+template <>
+Operand<int8_t>::Operand (eOperandType type, std::string const& value) : type(type)
+{
+	this->value = stoi(value);
+}
+
+template <>
+Operand<int16_t>::Operand (eOperandType type, std::string const& value) : type(type)
+{
+	this->value = stoi(value);
+}
+
+template <>
+Operand<float>::Operand (eOperandType type, std::string const& value) : type(type)
+{
+	this->value = stof(value);
+}
+
+template <>
+Operand<double>::Operand (eOperandType type, std::string const& value) : type(type)
+{
+	this->value = stod(value);
 }

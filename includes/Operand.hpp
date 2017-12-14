@@ -21,7 +21,7 @@ class Operand : public IOperand
 {
 	public:
 		Operand();
-		Operand(eOperandType);
+		Operand(eOperandType, std::string const&);
 		Operand( Operand const & src );
 		virtual ~Operand();
 
