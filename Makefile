@@ -6,7 +6,7 @@
 #    By: frmarinh <frmarinh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/05/20 17:57:50 by frmarinh          #+#    #+#              #
-#    Updated: 2017/12/15 09:17:35 by dmoureu-         ###   ########.fr        #
+#    Updated: 2017/12/15 09:56:56 by dmoureu-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ SRCBASE_ABSTRACT_VM	=	\
 					actions/Div.cpp							\
 					actions/Mod.cpp							\
 					actions/Dump.cpp						\
+					actions/Print.cpp 						\
 					actions/Assert.cpp
 
 INCS			=	$(addprefix $(INCDIR), $(INCBASE))

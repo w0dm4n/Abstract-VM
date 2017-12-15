@@ -6,7 +6,7 @@
 /*   By: frmarinh <frmarinh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/13 15:26:59 by frmarinh          #+#    #+#             */
-/*   Updated: 2017/12/15 09:13:57 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2017/12/15 09:57:15 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void Handler::initActions()
 	this->actions.push_back(new Action("div", &Div::Handle));
 	this->actions.push_back(new Action("mod", &Mod::Handle));
 	this->actions.push_back(new Action("assert", &Assert::Handle));
+	this->actions.push_back(new Action("print", &Print::Handle));
 }
 
 void Handler::Process(std::vector<std::string> line)

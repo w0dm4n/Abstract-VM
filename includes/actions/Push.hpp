@@ -28,6 +28,13 @@ class Push
 		static void Double(std::vector<std::string> line, Handler *handler);
 		static void Float(std::vector<std::string> line, Handler *handler);
 		static std::string clearNumber(std::string number);
+		static void reverse_stack(Handler *handler);
+
+		struct InvalidDatasOnPush : public std::exception {
+ 		 virtual const char* what() const throw() {
+ 			 return "The datas was invalid on a push instruction";
+ 		 }
+ 	 };
 };
 
 #endif
