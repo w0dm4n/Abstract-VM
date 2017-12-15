@@ -6,7 +6,7 @@
 /*   By: frmarinh <frmarinh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/13 15:26:59 by frmarinh          #+#    #+#             */
-/*   Updated: 2017/12/13 15:27:01 by frmarinh         ###   ########.fr       */
+/*   Updated: 2017/12/15 09:13:57 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,19 @@ void Handler::initActions()
 	this->actions.push_back(new Action("push", &Push::Handle));
 	this->actions.push_back(new Action("pop", &Pop::Handle));
 	this->actions.push_back(new Action("dump", &Dump::Handle));
+	this->actions.push_back(new Action("add", &Add::Handle));
+	this->actions.push_back(new Action("sub", &Sub::Handle));
+	this->actions.push_back(new Action("mul", &Mul::Handle));
+	this->actions.push_back(new Action("div", &Div::Handle));
+	this->actions.push_back(new Action("mod", &Mod::Handle));
+	this->actions.push_back(new Action("assert", &Assert::Handle));
 }
 
 void Handler::Process(std::vector<std::string> line)
 {
 	std::string	action = line[0];
 	bool		handler_found = false;
+	std::cout << "Acion: " << action << std::endl;
 	for (int i = 0; i < this->actions.size(); i++)
 	{
 		if (action == this->actions[i]->name) {

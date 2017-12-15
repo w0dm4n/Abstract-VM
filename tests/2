@@ -1,0 +1,20 @@
+push int32(1)
+push int32(2)
+push int32(10)
+push int32(3)
+dump
+sub
+dump
+mul
+dump
+push int32(-28)
+dump
+div
+dump
+push int32(3)
+push int32(4)
+dump
+mod
+dump
+assert double(1)
+dump

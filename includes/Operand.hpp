@@ -6,7 +6,7 @@
 /*   By: frmarinh <frmarinh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 16:50:14 by frmarinh          #+#    #+#             */
-/*   Updated: 2017/12/12 16:50:56 by frmarinh         ###   ########.fr       */
+/*   Updated: 2017/12/15 05:31:12 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class Operand : public IOperand
 		virtual ~Operand();
 
 		eOperandType						getType( void ) const;
-		int											getPrecision(void) const;
-		T												getValue() const;
+		int									getPrecision(void) const;
+		T									getValue() const;
 		IOperand const * operator+( IOperand const & rhs ) const;
 		IOperand const * operator-( IOperand const & rhs ) const;
 		IOperand const * operator*( IOperand const & rhs ) const;

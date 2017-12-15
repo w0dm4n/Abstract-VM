@@ -6,7 +6,7 @@
 #    By: frmarinh <frmarinh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/05/20 17:57:50 by frmarinh          #+#    #+#              #
-#    Updated: 2017/12/12 13:13:50 by frmarinh         ###   ########.fr        #
+#    Updated: 2017/12/15 09:17:35 by dmoureu-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,12 +34,18 @@ SRCBASE_ABSTRACT_VM	=	\
 					Utils.cpp								\
 					Operand.cpp								\
 					templates/OperandTemplate.cpp			\
-					Handler.cpp 							\
-					actions/Action.cpp	 					\
-					actions/Push.cpp	 					\
-					actions/Pop.cpp 						\
-					actions/Dump.cpp 						\
-				
+					Handler.cpp								\
+					actions/Action.cpp						\
+					actions/Push.cpp						\
+					actions/Pop.cpp							\
+					actions/Add.cpp							\
+					actions/Sub.cpp							\
+					actions/Mul.cpp							\
+					actions/Div.cpp							\
+					actions/Mod.cpp							\
+					actions/Dump.cpp						\
+					actions/Assert.cpp
+
 INCS			=	$(addprefix $(INCDIR), $(INCBASE))
 
 SRCS_ABSTRACT_VM			=	$(addprefix $(SRCDIR_ABSTRACT_VM), $(SRCBASE_ABSTRACT_VM))

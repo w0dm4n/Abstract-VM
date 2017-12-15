@@ -6,7 +6,7 @@
 /*   By: frmarinh <frmarinh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 17:56:51 by frmarinh          #+#    #+#             */
-/*   Updated: 2017/12/12 17:56:57 by frmarinh         ###   ########.fr       */
+/*   Updated: 2017/12/15 09:17:41 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,10 @@ eOperandType Operand<T>::getType() const
 template <class T>
 std::string const & Operand<T>::toString( void ) const
 {
-	std::string *lol = new std::string("aa");
-	return *lol;
+	std::string const *line;
+
+	line = new std::string(std::to_string(this->value));
+	return (*line);
 }
 
 template <class T>
@@ -81,31 +83,68 @@ Operand<T>::Operand (eOperandType type, std::string const &value) : type(type)
 template <class T>
 IOperand const * Operand<T>::operator+( IOperand const & rhs ) const
 {
-	return (NULL);
+	double			value = (stod(this->toString()) + stod(rhs.toString()));
+	eOperandType	bestType = this->getType();
+
+	if (rhs.getType() > bestType)
+		bestType = rhs.getType();
+
+	Operand<T> *operand = new Operand(bestType, std::to_string(value));
+	return (operand);
 }
 
 template <class T>
 IOperand const * Operand<T>::operator-( IOperand const & rhs ) const
 {
-	return (NULL);
+	double			value = (stod(this->toString()) - stod(rhs.toString()));
+	eOperandType	bestType = this->getType();
+
+	if (rhs.getType() > bestType)
+		bestType = rhs.getType();
+
+	Operand<T> *operand = new Operand(bestType, std::to_string(value));
+	return (operand);
 }
 
 template <class T>
 IOperand const * Operand<T>::operator*( IOperand const & rhs ) const
 {
-	return (NULL);
+	double			value = (stod(this->toString()) * stod(rhs.toString()));
+	eOperandType	bestType = this->getType();
+
+//	std::cout << "Wololo : " << this->toString() << " / " << rhs.toString() << " = " << std::to_string(value) << std::endl;
+
+	if (rhs.getType() > bestType)
+		bestType = rhs.getType();
+
+	Operand<T> *operand = new Operand(bestType, std::to_string(value));
+	return (operand);
 }
 
 template <class T>
 IOperand const * Operand<T>::operator/( IOperand const & rhs ) const
 {
-	return (NULL);
+	double			value = (stod(this->toString()) / stod(rhs.toString()));
+	eOperandType	bestType = this->getType();
+
+	if (rhs.getType() > bestType)
+		bestType = rhs.getType();
+
+	Operand<T> *operand = new Operand(bestType, std::to_string(value));
+	return (operand);
 }
 
 template <class T>
 IOperand const * Operand<T>::operator%( IOperand const & rhs ) const
 {
-	return (NULL);
+	double			value = fmod(stod(this->toString()),stod(rhs.toString()));
+	eOperandType	bestType = this->getType();
+
+	if (rhs.getType() > bestType)
+		bestType = rhs.getType();
+
+	Operand<T> *operand = new Operand(bestType, std::to_string(value));
+	return (operand);
 }
 
 #endif

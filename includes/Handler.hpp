@@ -6,7 +6,7 @@
 /*   By: frmarinh <frmarinh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/13 15:27:10 by frmarinh          #+#    #+#             */
-/*   Updated: 2017/12/13 15:27:13 by frmarinh         ###   ########.fr       */
+/*   Updated: 2017/12/15 09:17:39 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 #include "actions/Action.hpp"
 #include "actions/Push.hpp"
 #include "actions/Pop.hpp"
+#include "actions/Add.hpp"
+#include "actions/Sub.hpp"
+#include "actions/Mul.hpp"
+#include "actions/Div.hpp"
+#include "actions/Mod.hpp"
+#include "actions/Assert.hpp"
 #include "actions/Dump.hpp"
 
 class Handler
