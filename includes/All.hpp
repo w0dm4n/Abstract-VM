@@ -6,7 +6,7 @@
 /*   By: frmarinh <frmarinh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 13:20:25 by frmarinh          #+#    #+#             */
-/*   Updated: 2017/12/15 08:37:17 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2017/12/15 12:00:23 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 # include <memory>
 # include <limits.h>
 
+# include <float.h>
 # include <cmath> //Modulo double
 
 #endif

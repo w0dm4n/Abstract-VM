@@ -6,7 +6,7 @@
 /*   By: frmarinh <frmarinh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/14 16:32:42 by frmarinh          #+#    #+#             */
-/*   Updated: 2017/12/15 08:44:34 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2017/12/15 10:37:25 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Handler.hpp"
 #include "actions/Push.hpp"
 
-std::ostream & operator<<(std::ostream & os, std::stack <std::shared_ptr<const IOperand>> stack)
+std::ostream & operator<<(std::ostream & os, std::stack <std::shared_ptr<const IOperand> > stack)
 {
     Handler handler_cpy;
     handler_cpy.stack.swap(stack);
@@ -60,9 +60,9 @@ std::ostream & operator<<(std::ostream & os, std::stack <std::shared_ptr<const I
 				break;
 			}
 		}
-        handler_cpy.stack.pop();
-    }
-    return os;
+		handler_cpy.stack.pop();
+	}
+	return os;
 }
 
 void Dump::Handle(std::vector<std::string> line, Handler *handler)

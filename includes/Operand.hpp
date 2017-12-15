@@ -6,7 +6,7 @@
 /*   By: frmarinh <frmarinh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 16:50:14 by frmarinh          #+#    #+#             */
-/*   Updated: 2017/12/15 05:31:12 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2017/12/15 11:27:22 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,17 @@ class Operand : public IOperand
 
 		Operand&								operator=( Operand const & rhs );
 		friend std::ostream&		operator<<(std::ostream & o, Operand<T> const & i);
+
+		struct OperandOverflow : public std::exception {
+			virtual const char* what() const throw() {
+				return "Overflowwwwww";
+			}
+		};
+		struct OperandOverflowDecimal : public std::exception {
+			virtual const char* what() const throw() {
+				return "Decimal to int";
+			}
+		};
 	private:
 		eOperandType	type;
 		T				value;
