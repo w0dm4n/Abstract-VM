@@ -23,7 +23,7 @@ class Sub
 
 	 struct SubStackTooSmall : public std::exception {
 		 virtual const char* what() const throw() {
-			 return "Trying to sub an too small stack";
+			 return "Trying to substract a too small stack";
 		 }
 	 };
 };

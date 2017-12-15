@@ -23,12 +23,12 @@ class Div
 
 	 struct DivStackTooSmall : public std::exception {
 		 virtual const char* what() const throw() {
-			 return "Trying to div an too small stack";
+			 return "Trying to divide on a too small stack";
 		 }
 	 };
 	 struct DivByZero : public std::exception {
 		 virtual const char* what() const throw() {
-			 return "You try to Div By 0 => infini";
+			 return "Trying to divide by zero.";
 		 }
 	 };
 };

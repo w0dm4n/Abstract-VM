@@ -29,7 +29,7 @@ void Div::Handle(std::vector<std::string> line, Handler *handler)
 	IOperand const *clearSecond = factory.createOperand(second->getType(), second->toString());
 	handler->stack.pop();
 
-	if (stod(clearSecond->toString()) == 0)
+	if (stod(clearFirst->toString()) == 0 || stod(clearSecond->toString()) == 0)
 		throw DivByZero();
 	IOperand const *result = *clearFirst / *clearSecond;
 

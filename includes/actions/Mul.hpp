@@ -23,7 +23,7 @@ class Mul
 
 	 struct MulStackTooSmall : public std::exception {
 		 virtual const char* what() const throw() {
-			 return "Trying to mul an too small stack";
+			 return "Trying to mul a too small stack";
 		 }
 	 };
 };

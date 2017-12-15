@@ -23,7 +23,7 @@ class Mod
 
 	 struct ModStackTooSmall : public std::exception {
 		 virtual const char* what() const throw() {
-			 return "Trying to mod an too small stack";
+			 return "Trying to mod a too small stack";
 		 }
 	 };
 };
