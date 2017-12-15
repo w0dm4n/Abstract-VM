@@ -18,7 +18,6 @@ std::ostream & operator<<(std::ostream & os, std::stack <std::shared_ptr<const I
 {
     Handler handler_cpy;
     handler_cpy.stack.swap(stack);
-    Push::reverse_stack(&handler_cpy);
     while (!handler_cpy.stack.empty())
     {
 		IOperand const *top = handler_cpy.stack.top().get();

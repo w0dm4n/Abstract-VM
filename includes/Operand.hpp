@@ -43,11 +43,6 @@ class Operand : public IOperand
 				return "Overflow on operand push value";
 			}
 		};
-		struct OperandOverflowDecimal : public std::exception {
-			virtual const char* what() const throw() {
-				return "Decimal to int";
-			}
-		};
 	private:
 		eOperandType	type;
 		T				value;

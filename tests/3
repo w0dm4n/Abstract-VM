@@ -1,0 +1,6 @@
+push int32(123)
+push float(5.5)
+push int32(666)
+push int32(12)
+dump
+assert int32(123)

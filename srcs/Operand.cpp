@@ -16,13 +16,9 @@ template <>
 Operand<int8_t>::Operand (eOperandType type, std::string const& value) : type(type)
 {
 	double	val = stod(value);
-	
+
 	if (val < INT8_MIN || val > INT8_MAX)
 		throw OperandOverflow();
-	
-	if(stoi(value) != stod(value))
-		throw OperandOverflowDecimal();
-	
 	this->value = stoi(value);
 }
 
@@ -32,10 +28,6 @@ Operand<int16_t>::Operand (eOperandType type, std::string const& value) : type(t
 	double	val = stod(value);
 	if (val < INT16_MIN || val > INT16_MAX)
 		throw OperandOverflow();
-
-	if(stoi(value) != stod(value))
-		throw OperandOverflowDecimal();
-
 	this->value = stoi(value);
 }
 
@@ -45,10 +37,6 @@ Operand<int32_t>::Operand (eOperandType type, std::string const& value) : type(t
 	double	val = stod(value);
 	if (val < INT32_MIN || val > INT32_MAX)
 		throw OperandOverflow();
-
-	if(stoi(value) != stod(value))
-		throw OperandOverflowDecimal();
-
 	this->value = stoi(value);
 }
 
@@ -58,10 +46,6 @@ Operand<float>::Operand (eOperandType type, std::string const& value) : type(typ
 	double val = stod(value);
 	if (val < FLT_MIN || val > FLT_MAX)
 		throw OperandOverflow();
-
-	if (stof(value) != stod(value))
-		throw OperandOverflowDecimal();
-
 	this->value = stof(value);
 }
 
@@ -71,9 +55,5 @@ Operand<double>::Operand (eOperandType type, std::string const& value) : type(ty
 	double val = stold(value);
 	if (val < DBL_MIN || val > DBL_MAX)
 		throw OperandOverflow();
-
-	if (stod(value) != stold(value))
-		throw OperandOverflowDecimal();
-
 	this->value = stof(value);
 }

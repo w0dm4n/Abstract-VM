@@ -2,25 +2,11 @@
 #include "OperandFactory.hpp"
 #include "Handler.hpp"
 
-void Push::reverse_stack(Handler *handler)
-{
-	int size = handler->stack.size();
-	std::stack <std::shared_ptr<const IOperand>> new_stack;
-	for (int i = 0; i < size; i++)
-	{
-		std::shared_ptr<const IOperand> top = handler->stack.top();
-		handler->stack.pop();
-		new_stack.push(std::shared_ptr<const IOperand>(top));
-	}
-	handler->stack.swap(new_stack);
-}
-
 void Push::Int8(std::vector<std::string> number, Handler *handler)
 {
 	OperandFactory factory;
 	IOperand const *operand = factory.createOperand(eOperandType::Int8, number[0]);
   handler->stack.push(std::shared_ptr<const IOperand>(operand));
-	Push::reverse_stack(handler);
 }
 
 void Push::Int16(std::vector<std::string> number, Handler *handler)
@@ -28,7 +14,6 @@ void Push::Int16(std::vector<std::string> number, Handler *handler)
 	OperandFactory factory;
 	IOperand const *operand = factory.createOperand(eOperandType::Int16, number[0]);
   handler->stack.push(std::shared_ptr<const IOperand>(operand));
-	Push::reverse_stack(handler);
 }
 
 void Push::Int32(std::vector<std::string> number, Handler *handler)
@@ -36,7 +21,6 @@ void Push::Int32(std::vector<std::string> number, Handler *handler)
 	OperandFactory factory;
 	IOperand const *operand = factory.createOperand(eOperandType::Int32, number[0]);
   handler->stack.push(std::shared_ptr<const IOperand>(operand));
-	Push::reverse_stack(handler);
 }
 
 void Push::Double(std::vector<std::string> number, Handler *handler)
@@ -44,7 +28,6 @@ void Push::Double(std::vector<std::string> number, Handler *handler)
 	OperandFactory factory;
 	IOperand const *operand = factory.createOperand(eOperandType::Double, number[0]);
   handler->stack.push(std::shared_ptr<const IOperand>(operand));
-	Push::reverse_stack(handler);
 }
 
 void Push::Float(std::vector<std::string> number, Handler *handler)
@@ -52,7 +35,6 @@ void Push::Float(std::vector<std::string> number, Handler *handler)
 	OperandFactory factory;
 	IOperand const *operand = factory.createOperand(eOperandType::Float, number[0]);
   handler->stack.push(std::shared_ptr<const IOperand>(operand));
-	Push::reverse_stack(handler);
 }
 
 std::string Push::clearNumber(std::string number)
