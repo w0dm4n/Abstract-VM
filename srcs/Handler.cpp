@@ -55,6 +55,8 @@ void Handler::initActions()
 void Handler::Process(std::vector<std::string> line)
 {
 	std::string	action = line[0];
+	if (action.length() == 0)
+		return ;
 	bool		handler_found = false;
 	for (int i = 0; i < this->actions.size(); i++)
 	{

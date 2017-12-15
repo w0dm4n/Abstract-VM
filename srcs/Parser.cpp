@@ -49,9 +49,6 @@ void Parser::ParseEntry(std::vector<std::string> lines)
 			if (datas.size() > 0) {
 				handler.Process(datas);
 			}
-			else {
-				throw Handler::UnknownInstructionGiven();
-			}
 		}
 	}
 	throw Handler::NoExitOnInstructions();
