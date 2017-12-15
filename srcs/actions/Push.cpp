@@ -56,14 +56,14 @@ void Push::Handle(std::vector<std::string> line, Handler *handler)
 	actions.push_back(new Action("int32", &Push::Int32));
 	actions.push_back(new Action("double", &Push::Double));
 	actions.push_back(new Action("float", &Push::Float));
-	if (line.size() == 2)
+	if (line.size() >= 2)
 	{
 		char *value = (char*)line[1].c_str();
 		if (strchr(value, START_NUMBER) && strchr(value, END_NUMBER))
 		{
 			std::vector<std::string> split = Utils::split(line[1], START_NUMBER);
 			bool type_found = false;
-			if (split.size() == 2)
+			if (split.size() >= 2)
 			{
 				std::string type = split[0];
 				number.push_back(Push::clearNumber(split[1]));
