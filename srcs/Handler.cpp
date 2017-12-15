@@ -62,6 +62,8 @@ void Handler::Process(std::vector<std::string> line)
 			handler_found = true;
 			this->actions[i]->func(line, this);
 		}
+		else if (action == EOP)
+			exit(0);
 	}
 	if (!handler_found)
 		throw UnknownInstructionGiven();

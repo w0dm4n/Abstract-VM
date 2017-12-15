@@ -47,6 +47,12 @@ class Handler
    			 return "An unknown instruction has been given";
    		 }
    	 };
+
+		 struct NoExitOnInstructions : public std::exception {
+    		 virtual const char* what() const throw() {
+    			 return "No exit instruction on the program";
+    		 }
+    	 };
 	private:
 		std::vector<Action*>	actions;
 };

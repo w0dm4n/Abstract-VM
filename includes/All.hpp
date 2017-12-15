@@ -18,6 +18,7 @@
 #define START_NUMBER	'('
 #define END_NUMBER		')'
 #define COMMENT_CHAR	';'
+#define EOP           "exit"
 
 # include <unistd.h>
 # include <string>

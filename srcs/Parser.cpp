@@ -54,4 +54,5 @@ void Parser::ParseEntry(std::vector<std::string> lines)
 			}
 		}
 	}
+	throw Handler::NoExitOnInstructions();
 }
