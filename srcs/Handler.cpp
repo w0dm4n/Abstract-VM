@@ -56,7 +56,6 @@ void Handler::Process(std::vector<std::string> line)
 {
 	std::string	action = line[0];
 	bool		handler_found = false;
-	std::cout << "Acion: " << action << std::endl;
 	for (int i = 0; i < this->actions.size(); i++)
 	{
 		if (action == this->actions[i]->name) {

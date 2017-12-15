@@ -40,7 +40,7 @@ class Operand : public IOperand
 
 		struct OperandOverflow : public std::exception {
 			virtual const char* what() const throw() {
-				return "Overflowwwwww";
+				return "Overflow on operand push value";
 			}
 		};
 		struct OperandOverflowDecimal : public std::exception {

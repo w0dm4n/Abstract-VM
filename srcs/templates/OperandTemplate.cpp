@@ -75,8 +75,6 @@ Operand<T>::~Operand ()
 template <class T>
 Operand<T>::Operand (eOperandType type, std::string const &value) : type(type)
 {
-	std::cout << "Default Type" << std::endl;
-	this->value = 3;
 	return ;
 }
 
@@ -111,8 +109,6 @@ IOperand const * Operand<T>::operator*( IOperand const & rhs ) const
 {
 	double			value = (stod(this->toString()) * stod(rhs.toString()));
 	eOperandType	bestType = this->getType();
-
-//	std::cout << "Wololo : " << this->toString() << " / " << rhs.toString() << " = " << std::to_string(value) << std::endl;
 
 	if (rhs.getType() > bestType)
 		bestType = rhs.getType();
