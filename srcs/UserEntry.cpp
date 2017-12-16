@@ -17,6 +17,7 @@ UserEntry::UserEntry ()
 {
 	this->eof = false;
 	this->flagError = false;
+	this->contentCall = false;
 }
 
 UserEntry::UserEntry ( UserEntry const & src )
@@ -60,10 +61,13 @@ std::string	UserEntry::replaceNewline(char *buffer)
 
 std::vector<std::string> &UserEntry::getContent()
 {
-	if (this->contentCall && this->lines.size() > 1)
-		this->lines.erase(this->lines.begin());
-	else
-		this->contentCall = true;
+	if (this->getFlagError())
+	{
+		if (this->contentCall && this->lines.size() > 1)
+			this->lines.erase(this->lines.begin());
+		else
+			this->contentCall = true;
+	}
 	return this->lines;
 }
 
