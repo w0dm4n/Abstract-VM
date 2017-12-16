@@ -18,7 +18,8 @@
 #define START_NUMBER	'('
 #define END_NUMBER		')'
 #define COMMENT_CHAR	';'
-#define EOP           "exit"
+#define EOP           	"exit"
+#define FLAG_ERROR		"--error"
 
 # include <unistd.h>
 # include <string>

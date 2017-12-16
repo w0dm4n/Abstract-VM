@@ -16,6 +16,7 @@
 UserEntry::UserEntry ()
 {
 	this->eof = false;
+	this->flagError = false;
 }
 
 UserEntry::UserEntry ( UserEntry const & src )
@@ -57,6 +58,10 @@ std::string	UserEntry::replaceNewline(char *buffer)
 
 std::vector<std::string> &UserEntry::getContent()
 {
+	if (this->contentCall && this->lines.size() > 1)
+		this->lines.erase(this->lines.begin());
+	else
+		this->contentCall = true;
 	return this->lines;
 }
 
@@ -88,4 +93,18 @@ void UserEntry::readEntry()
 			this->lines.push_back(this->replaceNewline((char*)&buffer));
 		this->checkEOF();
 	}
+}
+
+void UserEntry::checkErrorFlag(int argc, char **argv)
+{
+	for (int i = 1; i < argc; i++)
+	{
+		if (!strcmp(argv[i], FLAG_ERROR))
+			this->flagError = true;
+	}
+}
+
+bool UserEntry::getFlagError()
+{
+	return this->flagError;
 }

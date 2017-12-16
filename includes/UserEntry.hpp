@@ -13,8 +13,10 @@ class UserEntry
 		void						readEntry();
 		void						readFile(std::string file);
 		void						checkEOF();
+		void						checkErrorFlag(int argc, char **argv);
 		std::string 				replaceNewline(char*);
 		std::vector<std::string>	&getContent();
+		bool						getFlagError();
 
 		UserEntry &							operator=( UserEntry const & rhs );
 		friend std::ostream &				operator<<(std::ostream & o, UserEntry const & i);
@@ -32,6 +34,8 @@ class UserEntry
 		};
 
 	private:
+	bool						flagError;
+	bool						contentCall;
 	bool 						eof;
 	std::vector<std::string>	lines;
 };
