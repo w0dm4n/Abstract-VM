@@ -24,17 +24,19 @@ Handler::Handler ( Handler const & src )
 
 Handler &				Handler::operator=( Handler const & rhs )
 {
+	(void)rhs;
 	return (*this);
 }
 
 Handler::~Handler ()
 {
-	for (int i = 0; i < this->actions.size(); i++)
+	for (size_t i = 0; i < this->actions.size(); i++)
 		delete this->actions[i];
 }
 
 std::ostream &				operator<<(std::ostream & o, Handler const & i)
 {
+	(void)i;
 	return (o);
 }
 
@@ -60,7 +62,7 @@ void Handler::Process(std::vector<std::string> line)
 	if (action.length() == 0)
 		return ;
 	bool		handler_found = false;
-	for (int i = 0; i < this->actions.size(); i++)
+	for (size_t i = 0; i < this->actions.size(); i++)
 	{
 		if (action == this->actions[i]->name) {
 			handler_found = true;

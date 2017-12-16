@@ -31,6 +31,7 @@ Action::Action ( Action const & src )
 
 Action &				Action::operator=( Action const & rhs )
 {
+	(void)rhs;
 	return (*this);
 }
 
@@ -41,5 +42,6 @@ Action::~Action ()
 
 std::ostream &				operator<<(std::ostream & o, Action const & i)
 {
+	(void)i;
 	return (o);
 }

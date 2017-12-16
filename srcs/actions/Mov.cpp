@@ -17,10 +17,10 @@ void Mov::Handle(std::vector<std::string> line, Handler *handler)
 {
 	if (line.size() == 2)
 	{
-		int	value = std::stoi(line[1]);
+		size_t value = std::stoi(line[1]);
 		if (value < handler->stack.size())
 		{
-			for (int i = 0; i < value; i++)
+			for (size_t i = 0; i < value; i++)
 				handler->stack.pop();
 		}
 		else

@@ -34,4 +34,5 @@ void Div::Handle(std::vector<std::string> line, Handler *handler)
 	IOperand const *result = *clearFirst / *clearSecond;
 
 	handler->stack.push(std::shared_ptr<const IOperand>(result));
+	(void)line;
 }

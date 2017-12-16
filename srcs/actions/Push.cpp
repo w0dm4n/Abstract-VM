@@ -41,7 +41,7 @@ std::string Push::clearNumber(std::string number)
 {
 	std::string value;
 
-	for (int i = 0; i < number.length() && number[i] != END_NUMBER; i++)
+	for (size_t i = 0; i < number.length() && number[i] != END_NUMBER; i++)
 		value += number[i];
 	return value;
 }
@@ -67,7 +67,7 @@ void Push::Handle(std::vector<std::string> line, Handler *handler)
 			{
 				std::string type = split[0];
 				number.push_back(Push::clearNumber(split[1]));
-				for (int i = 0; i < actions.size(); i++)
+				for (size_t i = 0; i < actions.size(); i++)
 				{
 					if (actions[i]->name == type) {
 						actions[i]->func(number, handler);
@@ -88,6 +88,6 @@ void Push::Handle(std::vector<std::string> line, Handler *handler)
 	{
 		throw InvalidDatasOnPush();
 	}
-	for (int i = 0; i < actions.size(); i++)
+	for (size_t i = 0; i < actions.size(); i++)
 		delete actions[i];
 }

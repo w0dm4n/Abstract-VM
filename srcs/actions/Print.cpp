@@ -28,4 +28,5 @@ void Print::Handle(std::vector<std::string> line, Handler *handler)
   }
   else
     throw PrintEmptyStack();
+	(void)line;
 }

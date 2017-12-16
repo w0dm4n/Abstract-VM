@@ -67,4 +67,5 @@ std::ostream & operator<<(std::ostream & os, std::stack <std::shared_ptr<const I
 void Dump::Handle(std::vector<std::string> line, Handler *handler)
 {
 	std::cout << handler->stack << std::endl;
+	(void)line;
 }

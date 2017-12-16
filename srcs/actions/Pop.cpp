@@ -15,6 +15,7 @@
 
 void Pop::Handle(std::vector<std::string> line, Handler *handler)
 {
+	(void)line;
 	if (!handler->stack.empty())
 	{
 		handler->stack.pop();

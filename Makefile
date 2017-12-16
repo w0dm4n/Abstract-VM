@@ -18,7 +18,7 @@ LENGTHNAME	=	`printf "%s" $(NAMEBASE) | wc -c`
 MAX_COLS	=	$$(echo "$$(tput cols)-24-$(LENGTHNAME)"|bc)
 
 CC			=	g++ -std=c++1z
-#FLAGS		=	-Wall -Wextra -Werror
+FLAGS		=	-Wall -Wextra -Werror
 FLAGS_O		=
 
 SRCDIR_ABSTRACT_VM		=	srcs/

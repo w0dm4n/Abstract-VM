@@ -26,6 +26,7 @@ UserEntry::UserEntry ( UserEntry const & src )
 
 UserEntry &				UserEntry::operator=( UserEntry const & rhs )
 {
+	(void)rhs;
 	return (*this);
 }
 
@@ -36,12 +37,13 @@ UserEntry::~UserEntry ()
 
 std::ostream &				operator<<(std::ostream & o, UserEntry const & i)
 {
+	(void)i;
 	return (o);
 }
 
 void UserEntry::checkEOF()
 {
-	for (int i = 0; i < this->lines.size(); i++)
+	for (size_t i = 0; i < this->lines.size(); i++)
 	{
 		if (this->lines[i] == EOF_AVM)
 			this->eof = true;

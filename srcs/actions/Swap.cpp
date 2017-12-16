@@ -23,4 +23,5 @@ void Swap::Handle(std::vector<std::string> line, Handler *handler)
 		handler->stack.pop();
 	}
 	handler->stack.swap(new_stack);
+	(void)line;
 }

@@ -25,6 +25,7 @@ Utils::Utils ( Utils const & src )
 
 Utils &				Utils::operator=( Utils const & rhs )
 {
+	(void)rhs;
 	return (*this);
 }
 
@@ -35,7 +36,7 @@ Utils::~Utils ()
 
 std::ostream &				operator<<(std::ostream & o, Utils const & i)
 {
-
+	(void)i;
 	return (o);
 }
 

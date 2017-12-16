@@ -24,12 +24,14 @@ Operand<T>::Operand ( Operand const & src )
 template <class T>
 Operand<T> &				Operand<T>::operator=( Operand const & rhs )
 {
+	(void)rhs;
 	return (*this);
 }
 
 template <class T>
 std::ostream &				operator<<(std::ostream & o, Operand<T> const & i)
 {
+	(void)i;
 	return (o);
 }
 
@@ -75,7 +77,7 @@ Operand<T>::~Operand ()
 template <class T>
 Operand<T>::Operand (eOperandType type, std::string const &value) : type(type)
 {
-	return ;
+	(void)value;
 }
 
 template <class T>

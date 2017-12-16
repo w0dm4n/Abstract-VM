@@ -24,6 +24,7 @@ Parser::Parser ( Parser const & src )
 
 Parser &				Parser::operator=( Parser const & rhs )
 {
+	(void)rhs;
 	return (*this);
 }
 
@@ -34,6 +35,7 @@ Parser::~Parser ()
 
 std::ostream &				operator<<(std::ostream & o, Parser const & i)
 {
+	(void)i;
 	return (o);
 }
 
@@ -41,7 +43,7 @@ void Parser::ParseEntry(std::vector<std::string> lines)
 {
 	std::vector<std::string>		datas;
 	Handler							handler;
-	for (int i = 0; i < lines.size(); i++)
+	for (size_t i = 0; i < lines.size(); i++)
 	{
 		if (lines[i][0] != COMMENT_CHAR)
 		{
