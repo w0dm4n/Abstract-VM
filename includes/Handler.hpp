@@ -27,6 +27,8 @@
 #include "actions/Dump.hpp"
 #include "actions/Assert.hpp"
 #include "actions/Print.hpp"
+#include "actions/Mov.hpp"
+#include "actions/Swap.hpp"
 
 class Handler
 {

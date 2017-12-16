@@ -45,7 +45,9 @@ SRCBASE_ABSTRACT_VM	=	\
 					actions/Mod.cpp							\
 					actions/Dump.cpp						\
 					actions/Print.cpp 						\
-					actions/Assert.cpp
+					actions/Assert.cpp						\
+					actions/Mov.cpp							\
+					actions/Swap.cpp						\
 
 INCS			=	$(addprefix $(INCDIR), $(INCBASE))
 

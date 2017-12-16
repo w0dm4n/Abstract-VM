@@ -50,6 +50,8 @@ void Handler::initActions()
 	this->actions.push_back(new Action("mod", &Mod::Handle));
 	this->actions.push_back(new Action("assert", &Assert::Handle));
 	this->actions.push_back(new Action("print", &Print::Handle));
+	this->actions.push_back(new Action("mov", &Mov::Handle));
+	this->actions.push_back(new Action("swap", &Swap::Handle));
 }
 
 void Handler::Process(std::vector<std::string> line)
