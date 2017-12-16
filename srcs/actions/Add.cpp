@@ -17,7 +17,7 @@
 void Add::Handle(std::vector<std::string> line, Handler *handler)
 {
 	if (handler->stack.size() < 2)
-		throw AddStackTooSmall();
+		throw AddStackTooSmall("Trying to add an too small stack");
 
 	OperandFactory factory;
 

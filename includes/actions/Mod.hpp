@@ -20,12 +20,9 @@ class Mod
 {
 	public:
 	 static void Handle(std::vector<std::string> line, Handler *handler);
-
-	 struct ModStackTooSmall : public std::exception {
-		 virtual const char* what() const throw() {
-			 return "Trying to mod a too small stack";
-		 }
-	 };
+	 struct ModStackTooSmall : public std::logic_error {
+	   ModStackTooSmall(const std::string& str) : std::logic_error(str) {}
+	};
 };
 
 #endif

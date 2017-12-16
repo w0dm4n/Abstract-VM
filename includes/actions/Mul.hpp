@@ -20,12 +20,9 @@ class Mul
 {
 	public:
 	 static void Handle(std::vector<std::string> line, Handler *handler);
-
-	 struct MulStackTooSmall : public std::exception {
-		 virtual const char* what() const throw() {
-			 return "Trying to mul a too small stack";
-		 }
-	 };
+	 struct MulStackTooSmall : public std::logic_error {
+	   MulStackTooSmall(const std::string& str) : std::logic_error(str) {}
+	};
 };
 
 #endif

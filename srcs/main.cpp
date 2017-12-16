@@ -29,9 +29,13 @@ int		main(int argc, char **argv)
 		}
 		Parser::ParseEntry(entry.getContent());
 	}
+	catch (std::logic_error &e)
+	{
+		std::cout << "Logic error occured: " << e.what() << std::endl;
+	}
 	catch (std::exception &e)
 	{
-		std::cout << "An error occured: " << e.what() << std::endl;
+		std::cout << "An exception occured: " << e.what() << std::endl;
 	}
 	return (0);
 }

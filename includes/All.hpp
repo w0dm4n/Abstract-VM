@@ -32,6 +32,6 @@
 # include <limits.h>
 
 # include <float.h>
-# include <cmath> //Modulo double
+# include <cmath>
 
 #endif

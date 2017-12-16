@@ -17,7 +17,7 @@
 void Div::Handle(std::vector<std::string> line, Handler *handler)
 {
 	if (handler->stack.size() < 2)
-		throw DivStackTooSmall();
+		throw DivStackTooSmall("Trying to divide on a too small stack");
 
 	OperandFactory factory;
 
@@ -30,7 +30,7 @@ void Div::Handle(std::vector<std::string> line, Handler *handler)
 	handler->stack.pop();
 
 	if (stod(clearFirst->toString()) == 0 || stod(clearSecond->toString()) == 0)
-		throw DivByZero();
+		throw DivByZero("Trying to divide by zero.");
 	IOperand const *result = *clearFirst / *clearSecond;
 
 	handler->stack.push(std::shared_ptr<const IOperand>(result));

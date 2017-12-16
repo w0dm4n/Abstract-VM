@@ -17,7 +17,7 @@
 void Mod::Handle(std::vector<std::string> line, Handler *handler)
 {
 	if (handler->stack.size() < 2)
-		throw ModStackTooSmall();
+		throw ModStackTooSmall("Trying to mod a too small stack");
 
 	OperandFactory factory;
 

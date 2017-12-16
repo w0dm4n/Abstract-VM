@@ -17,7 +17,7 @@
 void Mul::Handle(std::vector<std::string> line, Handler *handler)
 {
 	if (handler->stack.size() < 2)
-		throw MulStackTooSmall();
+		throw MulStackTooSmall("Trying to mul a too small stack");
 
 	OperandFactory factory;
 

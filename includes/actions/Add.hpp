@@ -20,11 +20,8 @@ class Add
 {
 	public:
 	 static void Handle(std::vector<std::string> line, Handler *handler);
-
-	 struct AddStackTooSmall : public std::exception {
-		 virtual const char* what() const throw() {
-			 return "Trying to add an too small stack";
-		 }
-	 };
+	 struct AddStackTooSmall : public std::logic_error {
+	   AddStackTooSmall(const std::string& str) : std::logic_error(str) {}
+	};
 };
 #endif

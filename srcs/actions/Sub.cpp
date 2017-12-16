@@ -17,7 +17,7 @@
 void Sub::Handle(std::vector<std::string> line, Handler *handler)
 {
 	if (handler->stack.size() < 2)
-		throw SubStackTooSmall();
+		throw SubStackTooSmall("Trying to substract a too small stack");
 
 	OperandFactory factory;
 
